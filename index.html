@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feliz 20 meses, mi amor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Dancing+Script:wght@500;700&amp;family=Nunito:wght@400;600;800&amp;display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root {
+  /* Un mundo blanco, rosa y rojo: una carta que se abre con "Seguir" y baja como un álbum de fotos. */
+  --bg: #fff8f9;
+  --paper: #ffffff;
+  --blush: #ffe2e9;
+  --pink: #ff8fab;
+  --red: #d62246;
+  --wine: #5a1a2b;
+  --muted: #a0687a;
+  --font-display: "Great Vibes", "Snell Roundhand", "Apple Chancery", cursive;
+  --font-hand: "Dancing Script", "Segoe Script", cursive;
+  --font-body: "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; overflow-x: clip; }
+body {
+  background: var(--bg);
+  background-image:
+    radial-gradient(circle at 15% 10%, var(--blush) 0, transparent 40%),
+    radial-gradient(circle at 90% 60%, var(--blush) 0, transparent 35%);
+  color: var(--wine);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img, video { max-width: 100%; height: auto; display: block; }
+
+#hearts {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+}
+main { position: relative; z-index: 1; }
+
+/* ---------- Intro ---------- */
+.intro {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 22px;
+  padding: 48px 20px;
+  text-align: center;
+}
+.dates {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.intro h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(3.4rem, 15vw, 6.4rem);
+  line-height: 1;
+  color: var(--red);
+  text-wrap: balance;
+  text-shadow: 0 2px 0 var(--paper), 0 10px 30px rgba(214, 34, 70, 0.18);
+}
+.counter {
+  background: var(--paper);
+  border: 1.5px solid var(--blush);
+  border-radius: 24px;
+  padding: 20px 18px 18px;
+  box-shadow: 0 18px 40px -18px rgba(214, 34, 70, 0.35);
+  width: min(100%, 460px);
+  display: grid;
+  gap: 12px;
+}
+.counter-label {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--wine);
+}
+.units {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.units div {
+  display: grid;
+  gap: 2px;
+  padding: 10px 2px 8px;
+  border-radius: 14px;
+  background: var(--blush);
+}
+.units span {
+  font-size: clamp(1.4rem, 6.5vw, 2rem);
+  font-weight: 800;
+  color: var(--red);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.units small {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.counter-sub {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.counter-sub strong { color: var(--wine); }
+
+.song {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+.song p {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--wine);
+}
+.song-links {
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+}
+.song-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--pink);
+  background: var(--paper);
+  color: var(--red);
+  font-weight: 800;
+  font-size: 0.98rem;
+  text-decoration: none;
+  box-shadow: 0 8px 20px -12px rgba(214, 34, 70, 0.5);
+}
+.song-btn svg { width: 18px; height: 18px; fill: currentColor; }
+.song-btn:hover { background: var(--blush); }
+.song-alt {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.song-btn:focus-visible, .song-alt:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 3px;
+}
+
+.btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 12px 26px -10px rgba(214, 34, 70, 0.7);
+  animation: latido 1.6s ease-in-out infinite;
+}
+.btn svg { width: 20px; height: 20px; fill: currentColor; }
+.btn:hover { background: #bf1b3c; }
+.btn:focus-visible, .big-heart:focus-visible, video:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 4px;
+}
+body.abierto .btn { animation: none; }
+
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  12% { transform: scale(1.07); }
+  24% { transform: scale(1); }
+  36% { transform: scale(1.05); }
+}
+
+/* ---------- Historia ---------- */
+.js body:not(.abierto) .gated { display: none; }
+
+.section-head {
+  text-align: center;
+  padding: 0 20px;
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+}
+.section-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.8rem, 11vw, 4.4rem);
+  line-height: 1.05;
+  color: var(--red);
+  text-wrap: balance;
+}
+.section-head p {
+  margin: 0;
+  max-width: 34ch;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.story { padding: 64px 0 24px; }
+.album {
+  list-style: none;
+  margin: 40px auto 0;
+  padding: 0 20px;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px 32px;
+  align-items: start;
+}
+.polaroid {
+  margin: 0;
+  background: var(--paper);
+  padding: 12px 12px 18px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(90, 26, 43, 0.06), 0 20px 40px -20px rgba(214, 34, 70, 0.45);
+  transform: rotate(var(--tilt, 0deg));
+  display: grid;
+  gap: 14px;
+  position: relative;
+}
+.polaroid::before {
+  content: "";
+  position: absolute;
+  top: -12px; left: 50%;
+  width: 84px; height: 24px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(255, 143, 171, 0.55);
+  border-radius: 3px;
+}
+.polaroid img {
+  width: 100%;
+  border-radius: 3px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--blush);
+}
+.polaroid figcaption {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.45rem;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--wine);
+  padding: 0 6px;
+  text-wrap: balance;
+}
+
+body.abierto .album > li,
+body.abierto .videos > li {
+  animation: subir 0.9s cubic-bezier(.2,.8,.2,1) both;
+  animation-delay: calc(var(--i, 0) * 140ms);
+}
+@keyframes subir {
+  from { opacity: 0; transform: translateY(28px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Videos ---------- */
+.clips { padding: 64px 0 24px; }
+.videos {
+  list-style: none;
+  margin: 36px auto 0;
+  padding: 0 20px;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 22px;
+}
+.videos li {
+  background: var(--paper);
+  border-radius: 20px;
+  padding: 10px 10px 14px;
+  box-shadow: 0 18px 36px -20px rgba(214, 34, 70, 0.45);
+  display: grid;
+  gap: 10px;
+}
+.videos video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 14px;
+  background: var(--blush);
+}
+.videos p {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  color: var(--wine);
+}
+
+/* ---------- Final ---------- */
+.final {
+  padding: 72px 20px 40px;
+  display: grid;
+  justify-items: center;
+}
+.letter {
+  width: min(100%, 620px);
+  background: linear-gradient(180deg, var(--paper) 0%, var(--blush) 100%);
+  border: 1.5px solid var(--blush);
+  border-radius: 28px;
+  padding: 40px 26px 34px;
+  text-align: center;
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+  box-shadow: 0 30px 60px -30px rgba(214, 34, 70, 0.5);
+}
+.letter blockquote {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 6.4vw, 2.2rem);
+  line-height: 1.3;
+  color: var(--wine);
+  text-wrap: balance;
+}
+.letter .amo {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 15vw, 5.6rem);
+  line-height: 1;
+  color: var(--red);
+}
+.letter .amo span {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.55em;
+  vertical-align: 0.12em;
+  margin-left: 0.15em;
+}
+.big-heart {
+  appearance: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  color: var(--red);
+  font-family: var(--font-body);
+}
+.big-heart svg {
+  width: 84px; height: 84px;
+  fill: var(--red);
+  filter: drop-shadow(0 10px 18px rgba(214, 34, 70, 0.45));
+  animation: latido 1.4s ease-in-out infinite;
+}
+.big-heart small {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.firma {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--wine);
+}
+footer {
+  text-align: center;
+  padding: 10px 20px 40px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Corazones que estallan */
+.burst {
+  position: fixed;
+  width: 22px; height: 22px;
+  pointer-events: none;
+  z-index: 50;
+  animation: estallar 1.2s cubic-bezier(.15,.7,.3,1) forwards;
+}
+.burst svg { width: 100%; height: 100%; fill: var(--c, var(--red)); }
+@keyframes estallar {
+  from { transform: translate(-50%, -50%) scale(0.3); opacity: 1; }
+  70% { opacity: 1; }
+  to { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(var(--s, 1)) rotate(var(--r)); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .big-heart svg { animation: none; }
+  body.abierto .album > li, body.abierto .videos > li { animation: none; }
+  .burst { display: none; }
+}
+</style>
+</head>
+<body>
+<canvas id="hearts" aria-hidden="true"></canvas>
+<main>
+  <header class="intro">
+    <p class="dates">7 de marzo de 2025 · 7 de noviembre de 2026</p>
+    <h1>Feliz 20 meses, mi amor</h1>
+    <section class="counter" aria-label="Tiempo juntos">
+      <p class="counter-label">Llevamos juntos</p>
+      <div class="units">
+        <div><span id="c-d">610</span><small>días</small></div>
+        <div><span id="c-h">00</span><small>horas</small></div>
+        <div><span id="c-m">00</span><small>minutos</small></div>
+        <div><span id="c-s">00</span><small>segundos</small></div>
+      </div>
+      <p class="counter-sub">Eso es <strong id="c-ym">1 año y 8 meses</strong> de nosotros, y sigue contando.</p>
+    </section>
+    <div class="song">
+      <p>Antes de seguir, pon nuestra canción</p>
+      <div class="song-links">
+        <a class="song-btn" href="https://open.spotify.com/search/so%20american%20olivia%20rodrigo" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+          so american · Olivia Rodrigo
+        </a>
+        <a class="song-alt" href="https://www.youtube.com/results?search_query=olivia+rodrigo+so+american" target="_blank" rel="noopener">o escúchala en YouTube</a>
+      </div>
+    </div>
+    <button class="btn" id="seguir" type="button">
+      Seguir
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </button>
+  </header>
+
+  <section class="story gated" id="historia">
+    <div class="section-head">
+      <h2>Nuestros momentos</h2>
+      <p>Unos poquitos de los muchos que me has regalado.</p>
+    </div>
+    <ul class="album">
+      <li style="--i:0">
+        <figure class="polaroid" style="--tilt:-2deg">
+          <img src="media/foto1.jpg" alt="Selfie de los dos en la cena" width="1400" height="1050" loading="lazy">
+          <figcaption>Contigo, cualquier cena se vuelve mi plan favorito.</figcaption>
+        </figure>
+      </li>
+      <li style="--i:1">
+        <figure class="polaroid" style="--tilt:1.5deg">
+          <img src="media/foto2.jpg" alt="Tú haciendo una carita chistosa en la cena" width="1400" height="1050" loading="lazy">
+          <figcaption>Hasta tus caritas chistosas me enamoran.</figcaption>
+        </figure>
+      </li>
+      <li style="--i:2">
+        <figure class="polaroid" style="--tilt:-1deg">
+          <img src="media/foto3.jpg" alt="Los dos riéndonos juntos" width="1050" height="1400" loading="lazy">
+          <figcaption>Nadie me hace reír como tú.</figcaption>
+        </figure>
+      </li>
+      <li style="--i:3">
+        <figure class="polaroid" style="--tilt:2deg">
+          <img src="media/foto4.jpg" alt="Yo cargándote en la tienda" width="645" height="1400" loading="lazy">
+          <figcaption>A tu lado, hasta ir de compras es una aventura.</figcaption>
+        </figure>
+      </li>
+      <li style="--i:4">
+        <figure class="polaroid" style="--tilt:-1.5deg">
+          <img src="media/foto5.jpg" alt="Abrazados frente al espejo" width="960" height="1280" loading="lazy">
+          <figcaption>Mi lugar favorito en el mundo es tu abrazo.</figcaption>
+        </figure>
+      </li>
+    </ul>
+  </section>
+
+  <section class="clips gated" id="videos">
+    <div class="section-head">
+      <h2>Y en video</h2>
+      <p>Toca cualquiera para verlo con sonido.</p>
+    </div>
+    <ul class="videos">
+      <li style="--i:0">
+        <video controls playsinline preload="none" poster="media/poster1.jpg">
+          <source src="media/video1.mp4" type="video/mp4">
+        </video>
+        <p>Nuestras locuras en la tienda</p>
+      </li>
+      <li style="--i:1">
+        <video controls playsinline preload="none" poster="media/poster2.jpg">
+          <source src="media/video2.mp4" type="video/mp4">
+        </video>
+        <p>Así se ve la felicidad</p>
+      </li>
+      <li style="--i:2">
+        <video controls playsinline preload="none" poster="media/poster3.jpg">
+          <source src="media/video3.mp4" type="video/mp4">
+        </video>
+        <p>Hasta en el gym, juntitos</p>
+      </li>
+      <li style="--i:3">
+        <video controls playsinline preload="none" poster="media/poster4.jpg">
+          <source src="media/video4.mp4" type="video/mp4">
+        </video>
+        <p>Días de gym contigo</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="final gated" id="final">
+    <div class="letter">
+      <blockquote>Aunque la distancia nos separe, nuestras almas siempre permanecerán unidas.</blockquote>
+      <p class="amo">Te amo infinito<span>∞</span></p>
+      <button class="big-heart" id="corazon" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <small>Toca el corazón</small>
+      </button>
+      <p class="firma">Con todo mi amor, Jairo</p>
+    </div>
+  </section>
+
+  <footer class="gated">Hecho para ti el 7 de noviembre de 2026, nuestro mes número 20.</footer>
+</main>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var START = Date.parse('2025-03-07T00:00:00-05:00');
+  var $ = function (id) { return document.getElementById(id); };
+  var pad = function (n) { return String(n).padStart(2, '0'); };
+
+  /* ---------- Contador ---------- */
+  function tick() {
+    var diff = Math.max(0, Date.now() - START);
+    var s = Math.floor(diff / 1000);
+    $('c-d').textContent = Math.floor(s / 86400).toLocaleString('es-EC');
+    $('c-h').textContent = pad(Math.floor((s % 86400) / 3600));
+    $('c-m').textContent = pad(Math.floor((s % 3600) / 60));
+    $('c-s').textContent = pad(s % 60);
+
+    var ec = new Date(Date.now() - 5 * 3600e3);
+    var months = (ec.getUTCFullYear() - 2025) * 12 + ec.getUTCMonth() - 2;
+    if (ec.getUTCDate() < 7) months--;
+    var y = Math.floor(months / 12), mo = months % 12, parts = [];
+    if (y > 0) parts.push(y + (y === 1 ? ' año' : ' años'));
+    if (mo > 0 || y === 0) parts.push(mo + (mo === 1 ? ' mes' : ' meses'));
+    $('c-ym').textContent = parts.join(' y ');
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  /* ---------- Corazones que estallan ---------- */
+  var HEART = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>';
+  var COLORS = ['#d62246', '#ff8fab', '#fb6f92', '#ffb3c6', '#e63958'];
+  function burst(x, y, n) {
+    if (reduce) return;
+    for (var i = 0; i < n; i++) {
+      var el = document.createElement('span');
+      el.className = 'burst';
+      el.innerHTML = HEART;
+      var ang = Math.random() * Math.PI * 2;
+      var dist = 70 + Math.random() * 170;
+      el.style.left = x + 'px';
+      el.style.top = y + 'px';
+      el.style.setProperty('--dx', Math.cos(ang) * dist + 'px');
+      el.style.setProperty('--dy', Math.sin(ang) * dist - 40 + 'px');
+      el.style.setProperty('--r', (Math.random() * 80 - 40) + 'deg');
+      el.style.setProperty('--s', (0.6 + Math.random() * 0.9).toFixed(2));
+      el.style.setProperty('--c', COLORS[i % COLORS.length]);
+      document.body.appendChild(el);
+      setTimeout(function (e) { e.remove(); }, 1300, el);
+    }
+  }
+  function centerOf(el) {
+    var r = el.getBoundingClientRect();
+    return [r.left + r.width / 2, r.top + r.height / 2];
+  }
+
+  $('seguir').addEventListener('click', function () {
+    var c = centerOf(this);
+    burst(c[0], c[1], 22);
+    document.body.classList.add('abierto');
+    setTimeout(function () {
+      $('historia').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    }, reduce ? 0 : 350);
+  });
+
+  $('corazon').addEventListener('click', function () {
+    var c = centerOf(this.querySelector('svg'));
+    burst(c[0], c[1], 40);
+  });
+
+  /* Un video a la vez */
+  var vids = document.querySelectorAll('video');
+  vids.forEach(function (v) {
+    v.addEventListener('play', function () {
+      vids.forEach(function (o) { if (o !== v) o.pause(); });
+    });
+  });
+
+  /* ---------- Corazones flotando de fondo ---------- */
+  var cv = $('hearts'), ctx = cv.getContext && cv.getContext('2d');
+  if (!ctx) return;
+  var W, H, dpr, hearts = [];
+  var FILLS = ['255,143,171', '214,34,70', '251,111,146', '255,179,198'];
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function make(randomY) {
+    return {
+      x: Math.random() * W,
+      y: randomY ? Math.random() * H : H + 30,
+      s: 10 + Math.random() * 22,
+      v: 0.25 + Math.random() * 0.6,
+      sway: 10 + Math.random() * 24,
+      ph: Math.random() * Math.PI * 2,
+      a: 0.12 + Math.random() * 0.22,
+      c: FILLS[Math.floor(Math.random() * FILLS.length)]
+    };
+  }
+  function drawHeart(x, y, s) {
+    ctx.beginPath();
+    ctx.moveTo(x, y + s * 0.3);
+    ctx.bezierCurveTo(x, y, x - s * 0.5, y, x - s * 0.5, y + s * 0.3);
+    ctx.bezierCurveTo(x - s * 0.5, y + s * 0.6, x, y + s * 0.78, x, y + s);
+    ctx.bezierCurveTo(x, y + s * 0.78, x + s * 0.5, y + s * 0.6, x + s * 0.5, y + s * 0.3);
+    ctx.bezierCurveTo(x + s * 0.5, y, x, y, x, y + s * 0.3);
+    ctx.fill();
+  }
+  function render(t) {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < hearts.length; i++) {
+      var h = hearts[i];
+      var dx = reduce ? 0 : Math.sin(t / 1400 + h.ph) * h.sway;
+      ctx.fillStyle = 'rgba(' + h.c + ',' + h.a + ')';
+      drawHeart(h.x + dx, h.y, h.s);
+    }
+  }
+  function loop(t) {
+    for (var i = 0; i < hearts.length; i++) {
+      hearts[i].y -= hearts[i].v;
+      if (hearts[i].y < -40) hearts[i] = make(false);
+    }
+    render(t);
+    requestAnimationFrame(loop);
+  }
+  resize();
+  var count = W < 500 ? 18 : 30;
+  for (var i = 0; i < count; i++) hearts.push(make(true));
+  window.addEventListener('resize', resize);
+  if (reduce) render(0); else requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
